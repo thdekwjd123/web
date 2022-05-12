@@ -1,0 +1,66 @@
+@charset "UTA-8";
+
+/*reset*/
+
+*{margin: 0; padding: 0;}
+a{text-decoration: none; color: #333;}
+li{list-style: none;}
+.clearfix::after{content: ""; clear: both; display: block;}
+
+
+/*layout*/
+#wrap{
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+#aside{width: 270px; background-color: skyblue; float: left;}
+#contents{width: 700px; background-color: pink; float: right; height: 200px;}
+#footer{
+    /*형제중에서 형들이 flaot이 설정되었을때
+    동생인 요소도 반드시 float설정되어야 한다
+    형이 float설정되어있지 않고 동생들이 float설정되어 있다면
+    형은 float설정되어있지 않아도 된다.*/
+    float: left; width: 100%; background-color: blueviolet;}
+
+#aside{background-color: brown;}
+#aside h1{}
+#aside h1 a{}
+#aside h1 a img{width: 150px;}
+#aside .nav{ padding-top: 10px;}
+#aside .nav ul{}
+#aside .nav ul li{
+    position: relative;
+    padding: 10px;
+    padding-bottom: 15px;
+    background-color: #f1f1f1;
+}
+#aside .nav ul li a{font-size: 23px;}
+#aside .nav ul li a:hover{text-decoration: underline;}
+
+#aside .nav ul li ul.submenu{position: absolute; right: -131px; top: 0; display: none;}
+#aside .nav ul li ul.submenu li{padding: 0;}
+#aside .nav ul li ul.submenu li a{border-bottom: 1px solid #ccc; display: block;
+padding: 10px;
+}
+#aside .nav ul li ul.submenu li a:hover{text-decoration: none;}
+
+
+/*contents*/
+/*banner*/
+
+.banner{height: 348px;}
+.banner .slideList{position: relative;}
+.banner .slideList .slideImg{position: absolute; left: 0; top: 0;}
+.banner .slideList .slideImg h2{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px 30px; /*공간*/
+    border-radius: 25px; /*영역의 라운드*/
+    top: 50%; left: 50%; transform: translate(-50%,-50%);
+}
+.banner .slideList .slideImg img{
+    width: 100%; display: block;}
+    /* 이미지에 예측공간이 생길때 처리방법
+    -원인은 img가 inline요소이기 때문 
+    1)display: block; 2):vertical-align:top;} */
